@@ -1,0 +1,162 @@
+activation pycharm 
+
+
+---------------------
+python manage.py migrate
+
+users:
+sql		portalsql		123456	
+postgres 			123456   port:5432
+		admin			123456
+mongodc 3.4.7
+
+sa    Sejustoybueno23
+-----------------------------
+COM USAR POSTGRES
+Comandos Postgres desde CMD Windows
+Comandos para postgres ejecutados desde windows.
+
+
+Conectarse a postgres: psql -h localhost -U postgres
+
+Para listar las bases desde postgres: \l
+
+Para listar los usuarios desde postgres: \du
+
+Para modificar alguna tabla desde postgres: ALTER TABLE
+
+Para entrar a una base de datos: \c nombre_Base 
+
+Para mostrar todas las tablas dentro de un esquema: \d+ nombre_Esquema.*
+
+Para listar todas las tablas dentro de una base : \dt *.* 
+
+Para mostrar una tabla en especifico de un esquema: \d+ nombre_Esquema . nombre_Tabla
+
+Para mostrar la descripcion de la tabla, columnas, tipo, modificadores, etc: \d+ nombre_Tabla
+
+Para crear un respaldo de una base de datos: pg_dum -h localhost -U postgres nombre_Base > nombre_Base.sql
+
+Restaurar una base de datos: 1. Crear una nueva base de datos donde se va a subir el respaldo
+psql -U postgres -d nombre_nuevaBase -f respaldo.sql
+*Nota: es importante siempre realizar el respaldo en la misma ruta donde se guardo la copia de la base. 
+
+Para entar a una postgres con un usuario diferente a postgres: psql -h localhost -d postgres -U usuario
+
+Para entrar  una base de datos con otro usuario: psql -h localhost -d nombre_base -U nombre_usuario
+http://dc-apuntes.blogspot.com/2016/04/comandos-postgres-desde-cmd-windows.html
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+python manage.py runserver
+python manage.py makemigrations  <app>
+python manage.oy sqlmigrate <app> 0001 (first change) 
+ 
+instalacion de un servicio (CMD CON ADMINISTRATOR TOOLS)
+   python <programa de instalacion> install 
+   
+pip install django-pyodbc
+pip install django-pyodbc-azure
+pip install django-mssql
+
+mongod --port 27017 --dbpath C:\MongoDB\data\db
+
+
+import sqlserver_ado.dbapi
+
+
+https://github.com/lionheart/django-pyodbc
+https://gist.github.com/aaugustin/9135842
+
+--------------------------------------
+Install and register the FreeTDS driver for unixODBC.
+
+ apt-get install tdsodbc
+ odbcinst -i -d -f /usr/share/tdsodbc/odbcinst.ini
+(Optional) Test the DSN-less connection with pyodbc.
+
+ apt-get install python-pyodbc
+
+ >>> import pyodbc
+ >>> pyodbc.connect("DRIVER=FreeTDS;SERVER=...;PORT=1433;UID=...;PWD=...;DATABASE=...")
+ <pyodbc.Connection object at ...>
+
+ apt-get remove python-pyodbc
+In your project's virtualenv, install django-pyodbc.
+
+ apt-get install python-dev unixodbc-dev
+ # If you have an old version of pip:
+ pip install django-pyodbc
+ # If you have a recent version of pip:
+ pip install --allow-external pyodbc --all-unverified pyodbc django-pyodbc
+Edit the DATABASES setting in your Django project.
+
+ DATABASES = {
+     '...': {
+         'ENGINE': 'django_pyodbc',
+         'NAME': '...',
+         'HOST': '...',
+         'PORT': 1433,
+         'USER': '...',
+         'PASSWORD': '...',
+         'OPTIONS': {
+             'host_is_server': True,
+         }
+     }
+ }
+Test the connection in ./manage.py shell.
+
+ >>> from django.db import connection
+ >>> cursor = connection.cursor()
+ >>> cursor.execute("SELECT 2 + 2")
+ <pyodbc.Cursor object at ...>
+ >>> cursor.fetchall()
+ [(4,)]
+ >>> cursor.close()
+ 
+ -----------------------------------------------------
+ 
+ PARA GIT HUB VCS y darle IMPORT GITHUB. 
+ fantastico
+ 
+ 
+ ---------------
+ para la pagina de ADMIN
+ TENGO QUE QUITAR ESTO DE SETTINGS
+ 'django.contrib.sites',
+ 
+ 
+ python manage.py makemigration music (music es el app)
+ ---devuelve los cambios en sql code
+ python manage.py sqlmigrate music 00001
+ -----este los muestra
+ python manage.py migrate
+ ----ejecuta los comandos y se actualuza db
+ 
+ 
+ python manage.py shell  //saber pa que putas
+ --from music.models import album,song
+ ---era para el shell y acceder a databases  
+ ---a = album (artist="tylor swift",  album_title=...)
+ ----a.save()
+  or 
+  ---a = Album()
+  ---a.artist=""tylos swifit
+  ----bla bla bla
+  --*-*-*-*-*album.objects.all()
+  
+  
+  python manage.py createsuperuser
+  tocken github
+  e58a7b4c5963796916043469704412a7a2f55df0
+  
+  -----
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
