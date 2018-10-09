@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <h1>Este es el disco <br>
+        Artista:{{ album.artist }} <br>
+        Titulo del Disco:{{ album.album_title }}</h1>
+    <img src="{{ album.album_logo }}">
+
+    {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <form action="{% url 'favorite' album.id %}" method="post">
+        <table style="width:100%">
+            <caption>Canciones Registradas</caption>
+            <!--_set.all no solo trae todo el listado sino le hace merge con-->
+            {% csrf_token %}
+            {% for song in album.song_set.all %}
+                <tr>
+                    <th><input type="radio" id="song{{ forloop.counter }}" name="song" value="{{ song.id }}"></th>
+                    <th>{{ song.song_title }} - {{ song.file_type }}</th>
+                    <th><label for="song{{ forloop.counter }}">
+                        {% if song.is_favorite %}
+                            <img src="https://a.fsdn.com/allura/p/imperia/icon?1438910766?&w=90"/>
+                        {% endif %}
+                    </label>
+                    </th>
+                </tr>
+            {% endfor %}
+            <input type="submit" value="Favorite">
+        </table>
+
+    </form>
+</head>
+<body>
+
+</body>
+</html>
