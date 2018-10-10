@@ -21,4 +21,4 @@ class Song(models.Model):
     is_favorite = models.BooleanField(default=False)
 
     def __str__(self):
-        return 'aquisobre escribo la cancnion que llae' + str(self.song_title)
+        return str(self.song_title)

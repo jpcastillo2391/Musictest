@@ -13,7 +13,7 @@
         <p><strong>{{ error_message }}</strong></p>
     {% endif %}
 
-    <form action="{% url 'favorite' album.id %}" method="post">
+    <form action="{% url 'musicss:favorite' album.id %}" method="post">
         <table style="width:100%">
             <caption>Canciones Registradas</caption>
             <!--_set.all no solo trae todo el listado sino le hace merge con-->
