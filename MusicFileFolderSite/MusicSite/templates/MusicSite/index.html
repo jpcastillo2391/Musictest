@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'MusicSite/style.css' %}"/>
+<>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>Mis albumes</h1>
+    {% if all_albums %}
+        <ul>
+            <!-- /music/{{ album.id }}-->
+            {% for album  in all_albums %}
+                <li><a href="{% url 'musicss:detalles' album.id %}">{{ album.album_title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>There are no albums available.</h3>
+    {% endif %}
+</head>
+<body>
+
+</body>
+</html>
