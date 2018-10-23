@@ -149,6 +149,7 @@ Test the connection in ./manage.py shell.
   e58a7b4c5963796916043469704412a7a2f55df0
   
   -----
+  git remote add origin
   
   
   

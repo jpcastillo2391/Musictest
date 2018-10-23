@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/MusicSite/views.py" line="22" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ddb0de7-203e-405e-b131-e227552f9c52" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MusicFileFolderSite.iml" afterPath="$PROJECT_DIR$/.idea/MusicFileFolderSite.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MusicFileFolderSite/settings.py" afterPath="$PROJECT_DIR$/MusicFileFolderSite/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MusicSite/templates/MusicSite/index.html" afterPath="$PROJECT_DIR$/MusicSite/templates/MusicSite/index.html" />
-    </list>
+    <list default="true" id="4ddb0de7-203e-405e-b131-e227552f9c52" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
