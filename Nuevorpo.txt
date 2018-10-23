@@ -1,0 +1,29 @@
+Notas de openerp
+
+Name machine OdooERP
+equipo  j-virtualmachine
+user  jpcastillo23
+pass 12345679p	
+
+--- 
+
+postgres admin (no password)
+user postgres  123456
+user odoo  123456789p
+database name odoo_project
+mail josecastillo.uvg
+pass 123456789p	
+phone +50232700123
+
+systemctl enable odoosystemctl start odoo
+sudo service odoo start | status | stop
+
+cut -d: -f1 /etc/passwd
+ls -l | grep <file>
+
+-----------------------
+soncorpmailsite
+sudo service postfix restart  (postfix es el esrve de corro creo)
+
+
+systemctl /etc/init.d/saslauthd start
