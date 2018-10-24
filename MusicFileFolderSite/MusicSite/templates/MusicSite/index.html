@@ -4,80 +4,97 @@
 <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
 <link rel="stylesheet" href="{% static 'bootstrap3/dist/css/bootstrap.css'%}"/>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet"/>
-<link rel="stylesheet" type="text/css" href="{% static 'MusicSite/style.css' %}"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="{% static 'jquery/jquery.js' %}"></script>
-<script src="{% static 'bootstrap3/dist/js/bootstrap.js' %}"></script>
+<!--link rel="stylesheet" type="text/css" href="{% static 'MusicSite/style.css' %}"/-->
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script-->
 
-<nav class="navbar navbar-inverse"> <!--defaul is blanck-->
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topnavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'musicss:musicsite'  %}">Jpsitemusic</a>
-        </div>
-        <!-- ITEMS QUE SE VAN A APARECER -->
-        <div class="collapse navbar-collapse" id="#topnavbar">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="{% url 'musicss:musicsite' %}">
-                        <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;Albums
-                    </a>
-                </li>
-                <li class="">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;Songs
-                    </a>
-                </li>
-            </ul>
-
-            <form class="navbar-form navbar-left" role="search" method="get" action="#">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="q" value="">
-                </div>
-                <button type="submit" class="btn btn-default">Search</button>
-            </form>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add Album
-                    </a>
-                </li>
-                <li class="">
-                    <a href="#">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-
-    </div>
-</nav>
-
-
-
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <h1>Mis albumes</h1>
-    {% if all_albums %}
-        <ul>
-            <!-- /music/{{ album.id }}-->
-            {% for album  in all_albums %}
-                <li><a href="{% url 'musicss:detalles' album.id %}">{{ album.album_title }}</a></li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <h3>There are no albums available.</h3>
-    {% endif %}
-</head>
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script-->
 <body>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'musicss:musicsite'  %}">Jpsitemusic</a>
+            </div>
+            <!-- ITEMS QUE SE VAN A APARECER -->
+            <div class="collapse navbar-collapse" id="#topnavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{% url 'musicss:musicsite' %}">
+                            <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp;Albums
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;Songs
+                        </a>
+                    </li>
+                </ul>
+
+                <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q" value="">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add Album
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+
+
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <h1>Mis albumes</h1>
+        {% if all_albums %}
+            <ul>
+                <!-- /music/{{ album.id }}-->
+                {% for album  in all_albums %}
+                    <li><a href="{% url 'musicss:detalles' album.id %}">{{ album.album_title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h3>There are no albums available.</h3>
+        {% endif %}
+    </head>
+<body>
+
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script-->
+
+
+    <script src="{% static 'jquery/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap3/dist/js/bootstrap.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+        $("h1").click(function(){
+            $(this).hide();
+        });
+    });
+    </script>
 
 </body>
 </html>
