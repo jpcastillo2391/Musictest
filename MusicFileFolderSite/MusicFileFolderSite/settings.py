@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.admindocs',
     # 'django.contrib.sites',
+
+
+    #los isguientes son boostrap comp.
+    #'boostrap',
+    #los isguientes son de jquery
+    'jquery',
 ]
 
 MIDDLEWARE = [
@@ -125,4 +131,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+PROJECT_PATH = os.path.basename(os.path.dirname(__name__))
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    #'/path/to/my_project/my_app/static/',
+    os.path.join(PROJECT_PATH,'static'),
+
+)
