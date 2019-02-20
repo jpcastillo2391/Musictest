@@ -1,3 +1,11 @@
 body {
-<!-- background: darkblue url("images/Blue_tiles2OOOOOO.jpg") -->
+	background: darkblue url("images/Blue_tiles2OOOOOO.jpg")
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+.navbar-brand {
+	font-family: 'Satisfy', cursive;
 }

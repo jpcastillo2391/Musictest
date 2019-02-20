@@ -143,6 +143,10 @@ Test the connection in ./manage.py shell.
   ----bla bla bla
   --*-*-*-*-*album.objects.all()
   
+  album1.song_set.all()
+  album1.song_set.count()
+  
+  
   
   python manage.py createsuperuser
   tocken github
