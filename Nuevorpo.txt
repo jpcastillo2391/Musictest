@@ -15,6 +15,10 @@ mail josecastillo.uvg
 pass 123456789p	
 phone +50232700123
 
+USERS SYSTEM
+OPENERP  -- NO TIENE PASSWORD
+
+
 systemctl enable odoosystemctl start odoo
 sudo service odoo start | status | stop
 
@@ -27,3 +31,59 @@ sudo service postfix restart  (postfix es el esrve de corro creo)
 
 
 systemctl /etc/init.d/saslauthd start
+
+sudo su
+https://www.youtube.com/watch?v=fxhTe2tN4Zc
+
+echo "" >> /etc/apt/sources.list
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias       
+Leyendo la información de estado... Hecho
+El paquete python-pybabel no está disponible, pero algún otro paquete hace referencia
+a él. Esto puede significar que el paquete falta, está obsoleto o sólo se
+encuentra disponible desde alguna otra fuente
+
+El paquete python-imaging no está disponible, pero algún otro paquete hace referencia
+a él. Esto puede significar que el paquete falta, está obsoleto o sólo se
+encuentra disponible desde alguna otra fuente
+Sin embargo, los siguientes paquetes lo reemplazan:
+  python-pil:i386 python-pil
+
+E: El paquete «python-pybabel» no tiene un candidato para la instalación
+E: El paquete «python-imaging» no tiene un candidato para la instalación
+
+sudo apt-get install graphviz ghostscript postgresql-client \
+python-dateutil python-feedparser python-matplotlib \
+python-ldap python-libxslt1 python-lxml python-mako \
+python-openid python-psycopg2 python-pybabel python-pychart \
+python-pydot python-pyparsing python-reportlab python-simplejson \
+python-tz python-vatnumber python-vobject python-webdav \
+python-werkzeug python-xlwt python-yaml python-imaging
+
+sudo apt-get install gcc python-dev mc bzr python-setuptools python-babel \
+python-feedparser python-reportlab-accel python-zsi python-openssl \
+python-egenix-mxdatetime python-jinja2 python-unittest2 pythonmock\
+python-docutils lptools make python-psutil python-paramiko poppler-utils\
+python-pdftools antiword postgresql
+
+
+
+# install libjpeg-dev with apt
+sudo apt-get install libjpeg-dev
+# if you're on Ubuntu 14.04, also install this
+sudo apt-get install libjpeg8-dev
+
+# reinstall pillow
+pip install --no-cache-dir -I pillow
+
+
+https://www.odoo.com/es_ES/forum/ayuda-1/question/ioerror-decoder-zip-not-available-14434
+
+
+error is caused by v4.0.0 of Pillow. uninstall it and install v3.4.2
+pip install Pillow==3.4.2
+
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+
