@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^music/', include('MusicSite.urls')),
+    url(r'^$', include('MusicSite.urls')),
 ]
